@@ -8,6 +8,13 @@ export const metadata: Metadata = {
     title: 'Асатру | Asatru',
     description: `Асатру (др. исл. Ásatrú, от слов Ás «бог» и trú «вера, доверие») – современное название 
   политеистической религии, основанной на дохристианских традициях и верованиях Скандинавии эпохи викингов.`,
+    openGraph: {
+        images: [
+            {
+                url: "https://asatru.live/og.jpg"
+            }
+        ]
+    }
 }
 
 export default function RootLayout({children,}: { children: React.ReactNode }) {
