@@ -2,6 +2,7 @@ import type {Metadata} from 'next'
 import './globals.css'
 import StyledComponentsRegistry from "@/lib/styledComponents/styledComponentsRegister";
 import Navbar from "@/app/_components/nav/Navbar";
+import Footer from "@/app/_components/footer/Footer";
 
 export const metadata: Metadata = {
     title: 'Асатру | Asatru',
@@ -16,6 +17,7 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
         <StyledComponentsRegistry>
             <Navbar/>
             {children}
+            <Footer/>
         </StyledComponentsRegistry>
         </body>
         </html>
