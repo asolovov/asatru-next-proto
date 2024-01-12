@@ -78,7 +78,6 @@ export default function Home() {
             </h2>
             <hr/>
             <div className={styles.mainText}>
-                {/*https://norroen.info/wiki/%D0%90%D1%81%D1%8B*/}
                 <p>Последователи асатру чтут богов скандинавского пантеона
                     — <Link
                         target={"_blank"}
