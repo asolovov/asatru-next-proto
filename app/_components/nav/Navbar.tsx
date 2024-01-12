@@ -1,18 +1,16 @@
-'use client'
-
 import Link from "next/link";
 import Image from "next/image";
-import {Nav, NavLogoLink} from "@/app/_components/nav/styles";
+import "./navbar.css"
 
 export default function Navbar() {
     return (
-        <Nav>
+        <nav className={"nav"}>
             <Link href={"/"} passHref>
-                <NavLogoLink>
+                <div className={"navLogoLink"}>
                     <Image src={"/valknut_white.png"} alt={"valknut"} height={50} width={50}/>
                     <span>Асатру</span>
-                </NavLogoLink>
+                </div>
             </Link>
-        </Nav>
+        </nav>
     )
 }

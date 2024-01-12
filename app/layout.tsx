@@ -1,6 +1,5 @@
 import type {Metadata} from 'next'
 import './globals.css'
-import StyledComponentsRegistry from "@/lib/styledComponents/styledComponentsRegister";
 import Navbar from "@/app/_components/nav/Navbar";
 import Footer from "@/app/_components/footer/Footer";
 
@@ -31,11 +30,9 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
         <html lang="ru">
         <body>
-        <StyledComponentsRegistry>
-            <Navbar/>
-            {children}
-            <Footer/>
-        </StyledComponentsRegistry>
+        <Navbar/>
+        {children}
+        <Footer/>
         </body>
         </html>
     )
