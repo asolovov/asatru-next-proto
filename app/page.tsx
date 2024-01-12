@@ -149,8 +149,10 @@ export default function Home() {
                     доблести <Link
                         target={"_blank"}
                         className={"link"}
-                        href={"https://norroen.info/wiki/%D0%A2%D1%8E%D1%80"}>Тюр</Link>, страж
-                    Асгарда <Link
+                        href={"https://norroen.info/wiki/%D0%A2%D1%8E%D1%80"}>Тюр</Link>, страж <Link
+                        target={"_blank"}
+                        className={"link"}
+                        href={"/encyclopedia/asgard"}>Асгарда</Link> <Link
                         target={"_blank"}
                         className={"link"}
                         href={"https://norroen.info/wiki/%D0%A5%D0%B5%D0%B9%D0%BC%D0%B4%D0%B0%D0%BB%D0%BB%D1%8C"}>Хеймдалль</Link>,
@@ -169,7 +171,10 @@ export default function Home() {
                         target={"_blank"}
                         className={"link"}
                         href={"https://norroen.info/wiki/%D0%A1%D0%BA%D0%B0%D0%B4%D0%B8"}>Скади</Link>, бог-
-                    лучник Улль и т.д. </p>
+                    лучник <Link
+                        target={"_blank"}
+                        className={"link"}
+                        href={"https://norroen.info/wiki/%D0%A3%D0%BB%D0%BB%D1%8C"}>Улль</Link> и т.д. </p>
                 <p>Поскольку понятие «<Link
                     target={"_blank"}
                     className={"link"}
