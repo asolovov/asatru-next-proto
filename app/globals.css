@@ -22,9 +22,21 @@ a {
   margin-right: 2%;
 }
 
+@media screen and (max-width: 768px) {
+  .articleContainer {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .articleContainer {
+    width: 50%;
+  }
+}
+
+
 .articleContainer {
   display: block;
-  width: 50%;
   margin: auto;
   word-spacing: 1.5px;
   letter-spacing: 0.5px;
