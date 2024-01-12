@@ -16,3 +16,33 @@ a {
   box-sizing: border-box;
 }
 
+.main {
+  margin-top: 100px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.articleContainer {
+  display: block;
+  width: 50%;
+  margin: auto;
+  word-spacing: 1.5px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+.quoteContainer {
+  font-style: italic;
+  margin: 30px;
+}
+
+.link {
+  color: cornflowerblue;
+  text-decoration-line: underline;
+  text-decoration-color: cornflowerblue;
+}
+
+.link:hover {
+  color: blueviolet;
+  text-decoration-line: none;
+}

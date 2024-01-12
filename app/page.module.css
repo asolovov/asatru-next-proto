@@ -1,9 +1,3 @@
-.main {
-  margin-top: 100px;
-  margin-left: 2%;
-  margin-right: 2%;
-}
-
 .container {
   display: grid;
   justify-items: center;
@@ -25,15 +19,4 @@
   letter-spacing: 1px;
   line-height: 1.5;
   margin-bottom: 100px;
-}
-
-.link {
-  color: cornflowerblue;
-  text-decoration-line: underline;
-  text-decoration-color: cornflowerblue;
-}
-
-.link:hover {
-  color: blueviolet;
-  text-decoration-line: none;
 }
