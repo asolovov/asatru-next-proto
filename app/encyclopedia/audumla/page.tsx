@@ -1,5 +1,8 @@
-import Link from "next/link";
 import type {Metadata} from "next";
+import {Jotnir} from "@/app/_components/encyclopediaLinks/beings";
+import {Buri, Odin, Ymir} from "@/app/_components/encyclopediaLinks/gods";
+import {Gylfaginning, OlafSaga, SnorriEdda} from "@/app/_components/encyclopediaLinks/sources";
+import {Snorri} from "@/app/_components/encyclopediaLinks/history";
 
 export const metadata: Metadata = {
     title: 'Асатру | Asatru | Аудумла',
@@ -31,23 +34,14 @@ export default function Home() {
             <div className={"articleContainer"}>
                 <h1>Аудумла</h1>
                 <p>Аудумла (<b>Auðumla</b>, также <b>Auðhumla</b> или <b>Auðhumbla</b>, богатая (молоком) безрогая корова) -
-                    корова, вскормившая своим молоком Первосущество — ётуна <Link
-                    target={"_blank"}
-                    className={"link"}
-                    href={"https://norroen.info/wiki/%D0%98%D0%BC%D0%B8%D1%80"}>Имира</Link>. Она возникла одновременно
-                    с <Link
-                        target={"_blank"}
-                        className={"link"}
-                        href={"https://norroen.info/wiki/%D0%98%D0%BC%D0%B8%D1%80"}>Имиром</Link> в месте, где ядовитый
+                    корова, вскормившая своим молоком Первосущество — <Jotnir
+                        name={"ётуна"}/> <Ymir name={"Имира"}/>. Она возникла одновременно
+                    с <Ymir name={"Имиром"}/> в месте, где ядовитый
                     иней Нифльхейма встречался с тёплым воздухом из огненного Муспельхейма.
                     Аудумла питалась тем, что лизала соленые камни, покрытые инеем. Из этих камней и возник предок
-                    богов <Link
-                        target={"_blank"}
-                        className={"link"}
-                        href={"https://norroen.info/wiki/%D0%91%D1%83%D1%80%D0%B8"}>Бури</Link>. Вот как рассказывает об
-                    этом Снорри в «<Link target={"_blank"} className={"link"}
-                                         href={"https://norroen.info/src/snorra/"}>Младшей
-                        Эдде</Link>»:</p>
+                    богов <Buri name={"Бури"}/>. Вот как рассказывает об
+                    этом <Snorri name={"Снорри"}/> в <SnorriEdda name={"Младшей Эдде"} chapter={""}/>:
+                </p>
                 <div className={"quoteContainer"}>
                     <p>...Тогда спросил Ганглери: «Где жил Имир? И чем он питался?»</p>
                     <p>Высокий отвечает: «Как растаял иней, тотчас возникла из него корова по имени Аудумла, и текли из
@@ -61,9 +55,7 @@ export default function Home() {
                         камни, в камне выросли человечьи волосы, на второй день — голова, а на третий день возник весь
                         человек.
                         Его прозывают Бури».</p>
-                    <p><Link target={"_blank"} className={"link"}
-                             href={"https://norroen.info/src/snorra/2ru.html#6"}>«Видение Гюльви»,
-                        6</Link></p>
+                    <p><Gylfaginning name={"Видение Гюльви #6"} chapter={"6"}/></p>
                 </div>
                 <p>
                     Следует отметить, что и изначально, и в позднее время скотоводство играло огромную роль в хозяйстве
@@ -71,15 +63,10 @@ export default function Home() {
                     закрепилось в
                     европейской культуре, тем не менее был обычай посвящения животных богам, что делало их
                     неприкосновенными, был миф Творения, где корова играет одну из ключевых ролей питательницы и
-                    создательницы жизни. Известно так же упоминание в «<Link target={"_blank"} className={"link"}
-                                                                             href={"https://norroen.info/src/konung/heimskringla/olaf-tr/ru.html"}>Саге
-                    об Олаве, сыне Трюггви</Link>», LXIV воинственного
+                    создательницы жизни. Известно так же упоминание в <OlafSaga name={"Саге об Олаве, сыне Трюггви"} chapter={""}/>, LXIV воинственного
                     конунга Эгвальда, что «поклонялся всего больше одной корове», которую брал с собой, куда бы ни ходил
                     в
-                    поход». Причем, рассказ этот вложен в уста <Link
-                    target={"_blank"}
-                    className={"link"}
-                    href={"https://norroen.info/wiki/%D0%9E%D0%B4%D0%B8%D0%BD"}>Одина</Link>-странника, и в оригинальном
+                    поход». Причем, рассказ этот вложен в уста <Odin name={"Одина"}/>-странника, и в оригинальном
                     тексте употреблён
                     глагол <b>blóta</b>, который оззначает и «поклоняться», и «приносить жертвы». Согласно саге, в
                     народной памяти
