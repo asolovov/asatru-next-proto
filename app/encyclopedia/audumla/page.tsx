@@ -30,7 +30,8 @@ export default function Home() {
         <main className={"main"}>
             <div className={"articleContainer"}>
                 <h1>Аудумла</h1>
-                <p>Аудумла - корова, вскормившая своим молоком Первосущество — ётуна <Link
+                <p>Аудумла (<b>Auðumla</b>, также <b>Auðhumla</b> или <b>Auðhumbla</b>, богатая (молоком) безрогая корова) -
+                    корова, вскормившая своим молоком Первосущество — ётуна <Link
                     target={"_blank"}
                     className={"link"}
                     href={"https://norroen.info/wiki/%D0%98%D0%BC%D0%B8%D1%80"}>Имира</Link>. Она возникла одновременно
