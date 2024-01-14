@@ -27,6 +27,15 @@ export function Alvis({name, chapter}: {name: string, chapter: string}) {
     )
 }
 
+export function Sigrdrif({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link
+            target={"_blank"}
+            className={"link"}
+            href={`https://norroen.info/src/edda/sigrdrif/`}>{name}</Link>»</>
+    )
+}
+
 export function SnorriEdda({name, chapter}: {name: string, chapter: string}) {
     return (
         <>«<Link
