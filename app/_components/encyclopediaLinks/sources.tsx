@@ -18,6 +18,15 @@ export function Grimnirs({name, chapter}: {name: string, chapter: string}) {
     )
 }
 
+export function Alvis({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>“<Link
+            target={"_blank"}
+            className={"link"}
+            href={`http://norroen.info/src/edda/alvis/`}>{name}</Link>”</>
+    )
+}
+
 export function SnorriEdda({name, chapter}: {name: string, chapter: string}) {
     return (
         <>“<Link
@@ -53,9 +62,16 @@ export function Inglinge({name, chapter}: {name: string, chapter: string}) {
             href={`http://norroen.info/src/konung/heimskringla/ynglinga/ru.html`}>{name}</Link>”</>
     )
 }
+
 export function OlafSaga({name, chapter}: {name: string, chapter: string}) {
     return (
         <>“<Link target={"_blank"} className={"link"}
                  href={"https://norroen.info/src/konung/heimskringla/olaf-tr/ru.html"}>{name}</Link>”</>
+    )
+}
+export function Sagas({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>“<Link target={"_blank"} className={"link"}
+                 href={"https://norroen.info/src/abc.html"}>{name}</Link>”</>
     )
 }

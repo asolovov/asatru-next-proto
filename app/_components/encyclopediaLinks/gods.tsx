@@ -224,12 +224,32 @@ export function Buri({name}: {name: string}) {
             href={"http://norroen.info/wiki/Бури"}>{name}</Link>
     )
 }
+
 export function Ymir({name}: {name: string}) {
     return (
         <Link
             target={"_blank"}
             className={"link"}
             href={"http://norroen.info/wiki/Имир"}>{name}</Link>
+    )
+}
+
+
+export function Idunn({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link"}
+            href={"https://norroen.info/wiki/%D0%98%D0%B4%D1%83%D0%BD%D0%BD"}>{name}</Link>
+    )
+}
+
+export function Hel({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link"}
+            href={"https://norroen.info/wiki/Хель"}>{name}</Link>
     )
 }
 
