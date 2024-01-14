@@ -1,8 +1,6 @@
 import type {Metadata} from "next";
-import {Jotnir} from "@/app/_components/encyclopediaLinks/beings";
-import {Buri, Odin, Sol, Ymir} from "@/app/_components/encyclopediaLinks/gods";
-import {Grimnirs, Gylfaginning, OlafSaga, RagnarSaga, Sigrdrif} from "@/app/_components/encyclopediaLinks/sources";
-import {Snorri} from "@/app/_components/encyclopediaLinks/history";
+import { Sol} from "@/app/_components/encyclopediaLinks/gods";
+import {Grimnirs, Sigrdrif} from "@/app/_components/encyclopediaLinks/sources";
 
 export const metadata: Metadata = {
     title: 'Асатру | Asatru | Альсвинн - Арвак',
@@ -74,7 +72,7 @@ export default function Home() {
                     напоминающими о кельтской культуре) и пара стилизованных изображений коней рядом.
                 </p>
                 <p>
-                    В <Sigrdrif name={"Речах Сигридривы"} chapter={"15"}/> солнечные кони упоминаются в перечне всего, что отмечено рунами:
+                    В <Sigrdrif name={"Речах Сигридривы, 15"} chapter={"15"}/> солнечные кони упоминаются в перечне всего, что отмечено рунами:
                 </p>
                 <div className={"quoteContainer"}>
                     <p>
