@@ -27,6 +27,15 @@ export function Jotnir({name}: {name: string}) {
     )
 }
 
+export function AskEndEmbla({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link"}
+            href={"http://norroen.info/wiki/Аск_и_Эмбла"}>{name}</Link>
+    )
+}
+
 export function Audumla({name}: {name: string}) {
     return (
         <Link
@@ -69,6 +78,15 @@ export function Disir({name}: {name: string}) {
             target={"_blank"}
             className={"link"}
             href={"https://norroen.info/wiki/%D0%94%D0%B8%D1%81%D1%8B"}>{name}</Link>
+    )
+}
+
+export function Dvergr({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link"}
+            href={"http://norroen.info/wiki/Дверги"}>{name}</Link>
     )
 }
 

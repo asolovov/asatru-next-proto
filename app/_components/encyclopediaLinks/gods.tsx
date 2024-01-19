@@ -253,5 +253,14 @@ export function Hel({name}: {name: string}) {
     )
 }
 
+export function Surtr({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link"}
+            href={"http://norroen.info/wiki/Сурт"}>{name}</Link>
+    )
+}
+
 
 

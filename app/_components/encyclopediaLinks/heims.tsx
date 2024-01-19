@@ -25,3 +25,12 @@ export function Midgard({name}: {name: string}) {
             href={`http://norroen.info/wiki/Мидгард`}>{name}</Link>
     )
 }
+
+export function Urd({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link"}
+            href={`http://norroen.info/wiki/Мидгард`}>{name}</Link>
+    )
+}
