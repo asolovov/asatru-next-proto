@@ -48,6 +48,10 @@ a {
   margin: 30px;
 }
 
+.point {
+  color: darkslateblue;
+}
+
 .link {
   text-decoration-line: underline;
 }

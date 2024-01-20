@@ -262,5 +262,14 @@ export function Surtr({name}: {name: string}) {
     )
 }
 
+export function Egir({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link linkOut"}
+            href={"http://norroen.info/wiki/Эгир"}>{name}</Link>
+    )
+}
+
 
 

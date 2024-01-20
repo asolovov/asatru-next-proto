@@ -32,7 +32,7 @@ export default function Home() {
     return (
         <main className={"main"}>
             <div className={"articleContainer"}>
-                <h1>Аудумла</h1>
+                <h1 className={"point"}>Аудумла</h1>
                 <p>Аудумла (<b>Auðumla</b>, также <b>Auðhumla</b> или <b>Auðhumbla</b>, богатая (молоком) безрогая
                     корова) -
                     корова, вскормившая своим молоком Первосущество — <Jotnir

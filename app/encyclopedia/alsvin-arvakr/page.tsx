@@ -31,7 +31,7 @@ export default function Home() {
     return (
         <main className={"main"}>
             <div className={"articleContainer"}>
-                <h1>Альсвинн и Арвак</h1>
+                <h1 className={"point"}>Альсвинн и Арвак</h1>
                 <p>
                     Альсвинн (<b>Alsvinn</b> или <b>Alsviðr</b>, всебыстрый) и Арвак (<b>Árvakr</b>, рано
                     пробуждающийся) — кони, которые

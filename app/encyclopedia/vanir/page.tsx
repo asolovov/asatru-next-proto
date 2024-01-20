@@ -38,7 +38,7 @@ export default function Home() {
     return (
         <main className={"main"}>
             <div className={"articleContainer"}>
-                <h1>Ваны, Ван</h1>
+                <h1 className={"point"}>Ваны, Ван</h1>
                 <p>
                     Ваны (мн.ч. <b>vanir</b>, ед. ч. <b>vanr</b>, значения слова <b>vanr</b>, возможно, омонима к названию божеств:
                     1)привычный, обычный 2)сладострастный) – группа божеств, которую принято связывать с плодородием,

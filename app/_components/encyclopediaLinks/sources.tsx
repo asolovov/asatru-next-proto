@@ -18,6 +18,15 @@ export function Grimnirs({name, chapter}: {name: string, chapter: string}) {
     )
 }
 
+export function Havamal({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link
+            target={"_blank"}
+            className={"link linkOut"}
+            href={`https://norroen.info/src/edda/havamal/`}>{name}</Link>»</>
+    )
+}
+
 export function Alvis({name, chapter}: {name: string, chapter: string}) {
     return (
         <>«<Link
@@ -85,9 +94,29 @@ export function RagnarSaga({name, chapter}: {name: string, chapter: string}) {
                  href={"https://norroen.info/src/forn/ragnar/"}>{name}</Link>»</>
     )
 }
+export function HakonSaga({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={"http://norroen.info/src/konung/heimskringla/hakon-g/ru.html"}>{name}</Link>»</>
+    )
+}
 export function Sagas({name, chapter}: {name: string, chapter: string}) {
     return (
         <>«<Link target={"_blank"} className={"link linkOut"}
                  href={"https://norroen.info/src/abc.html"}>{name}</Link>»</>
+    )
+}
+
+export function Eyrbygg({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={"http://norroen.info/src/isl/eyrbygg/"}>{name}</Link>»</>
+    )
+}
+
+export function Beowulf({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={"http://norroen.info/src/other/beowulf/beowulf.html"}>{name}</Link>»</>
     )
 }

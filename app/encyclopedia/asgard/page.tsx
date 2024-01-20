@@ -43,7 +43,7 @@ export default function Home() {
     return (
         <main className={"main"}>
             <div className={"articleContainer"}>
-                <h1>Асгард</h1>
+                <h1 className={"point"}>Асгард</h1>
                 <p>Асгард (<b>Ásgarðr</b>,ограда <Asir name={"асов"}/>) мир <Asir name={"асов"}/>, в более узком смысле
                     слова – селение <Asir name={"асов"}/> в этом мире.
                     Локализация миров в скандинавской мифологии неоднозначна, но Асгард ассоцииуруется с небом, верхним

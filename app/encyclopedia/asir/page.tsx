@@ -49,7 +49,7 @@ export default function Home() {
     return (
         <main className={"main"}>
             <div className={"articleContainer"}>
-                <h1>Асы, Ас</h1>
+                <h1 className={"point"}>Асы, Ас</h1>
                 <p>
                     Асы (мн.ч. <b>æsir</b>, ед. ч. <b>áss</b>) – одна из двух основных групп высших божеств в
                     скандинавском пантеоне, иногда – обозначение богов вообще. Другим божественным родом

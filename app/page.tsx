@@ -17,7 +17,7 @@ import {
     Tur, Ullr, Ymir
 } from "@/app/_components/encyclopediaLinks/gods";
 import {Asgard} from "@/app/_components/encyclopediaLinks/heims";
-import {Heathenry} from "@/app/_components/encyclopediaLinks/terms";
+import {Blot, Heathenry} from "@/app/_components/encyclopediaLinks/terms";
 
 export default function Home() {
     return (
@@ -162,8 +162,8 @@ export default function Home() {
             </h2>
             <hr/>
             <div className={styles.mainText}>
-                <p>Основным обрядом в Асатру является жертвоприношение еды и напитков, называемое
-                    блот (<b>blót</b>) и сопровождаемое славлениями богов и/или иных существ-адресатов
+                <p>Основным обрядом в Асатру является жертвоприношение еды и напитков, называемое <Blot
+                    name={"блот"}/> (<b>blót</b>) и сопровождаемое славлениями богов и/или иных существ-адресатов
                     жертвоприношения. Также распространён совместный ритуальный пир верующих – сумбл
                     (<b>sumbl</b>) или вейцла (<b>veisla</b>), со здравицами во славу богов и предков.
                     Все последователи Асатру чтят праздники Годового круга, хотя набор обязательных
