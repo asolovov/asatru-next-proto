@@ -17,6 +17,7 @@ import {Edda, Grimnirs, Gylfaginning, Inglinge, SnorriEdda, Voluspa} from "@/app
 import {Snorri} from "@/app/_components/encyclopediaLinks/history";
 import {Asgard, Iggdrasil, Midgard} from "@/app/_components/encyclopediaLinks/heims";
 import Link from "next/link";
+import {InText, SourceLink} from "@/app/_components/encyclopediaLinks/SourceLink";
 
 export const metadata: Metadata = {
     title: 'Асатру | Asatru | Асы',
@@ -70,7 +71,7 @@ export default function Home() {
                     праиндоевропейского <b>*h₂ens-</b> (рождать, порождать). Это слово родственно
                     древнеанглийскому <b>ōs</b>,
                     древнесаксонскому <b>ās</b>, древневерхненемецкому <b>ans-</b>, латинскому <b>Ansis</b> (мн.ч.,
-                    заимствовано из готского)<a className={"link"} href={"#1"}>¹</a>.
+                    заимствовано из готского)<InText num={"1"}/>.
                     Этимология имени асов подтверждает свидетельства мифа о том, что богов изначально видели
                     порождающими жизнь, нашими реальными или символическими предками. Ведь именно боги создали наш мир,
                     и сотворили первых людей <AskEndEmbla name={"Аска и Емблу"}/>, или, вернее сказать, придали им вид и
@@ -211,8 +212,7 @@ export default function Home() {
                     («ансов», <b>ansuz</b> – божественных предков) у готов свидетельствует об исконном и общегерманском
                     характере веры в асов.
                 </p>
-                ¹ <a id={"1"} className={"link"} href={"https://en.wiktionary.org/wiki/áss"} target={"_blank"}>Этимология
-                слова áss</a>
+                <SourceLink link={"https://en.wiktionary.org/wiki/áss"} text={"Этимология лова áss"} num={"1"}/>
             </div>
         </main>
     )

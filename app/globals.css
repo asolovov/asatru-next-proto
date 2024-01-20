@@ -49,9 +49,23 @@ a {
 }
 
 .link {
-  color: cornflowerblue;
   text-decoration-line: underline;
+}
+
+.inText {
+  font-weight: bold;
+  color: darkred;
+  text-decoration-color: darkred;
+}
+
+.linkOwn {
+  color: cornflowerblue;
   text-decoration-color: cornflowerblue;
+}
+
+.linkOut {
+  color: darkslategray;
+  text-decoration-color: darkslategray;
 }
 
 .link:hover {
