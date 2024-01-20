@@ -3,7 +3,6 @@ import Link from "next/link";
 export function Asir({name}: {name: string}) {
     return (
         <Link
-            target={"_blank"}
             className={"link linkOwn"}
             href={"/encyclopedia/asir"}>{name}</Link>
     )
@@ -12,7 +11,6 @@ export function Asir({name}: {name: string}) {
 export function Vanir({name}: {name: string}) {
     return (
         <Link
-            target={"_blank"}
             className={"link linkOwn"}
             href={"/encyclopedia/vanir"}>{name}</Link>
     )
@@ -39,7 +37,6 @@ export function AskEndEmbla({name}: {name: string}) {
 export function Audumla({name}: {name: string}) {
     return (
         <Link
-            target={"_blank"}
             className={"link linkOwn"}
             href={"/encyclopedia/audumla"}>{name}</Link>
     )

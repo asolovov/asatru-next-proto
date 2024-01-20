@@ -21,7 +21,6 @@ export function Mjod({name}: {name: string}) {
 export function Blot({name}: {name: string}) {
     return (
         <Link
-            target={"_blank"}
             className={"link linkOwn"}
             href={`/encyclopedia/blot`}>{name}</Link>
     )

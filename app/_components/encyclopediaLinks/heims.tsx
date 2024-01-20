@@ -3,7 +3,6 @@ import Link from "next/link";
 export function Asgard({name}: {name: string}) {
     return (
         <Link
-            target={"_blank"}
             className={"link linkOwn"}
             href={`/encyclopedia/asgard`}>{name}</Link>
     )
