@@ -48,6 +48,17 @@ a {
   margin: 30px;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.col2 {
+  width: 50%;
+  flex: 0 0 auto;
+}
+
 .point {
   color: darkslateblue;
 }

@@ -14,7 +14,7 @@ export function Grimnirs({name, chapter}: {name: string, chapter: string}) {
         <>«<Link
             target={"_blank"}
             className={"link linkOut"}
-            href={`https://norroen.info/src/edda/grimnis/ru.html`}>{name}</Link>»</>
+            href={`https://norroen.info/src/edda/grimnis/ru.html#${chapter}`}>{name}</Link>»</>
     )
 }
 
@@ -41,7 +41,7 @@ export function Sigrdrif({name, chapter}: {name: string, chapter: string}) {
         <>«<Link
             target={"_blank"}
             className={"link linkOut"}
-            href={`https://norroen.info/src/edda/sigrdrif/`}>{name}</Link>»</>
+            href={`https://norroen.info/src/edda/sigrdrif/ru.html#${chapter}`}>{name}</Link>»</>
     )
 }
 
@@ -68,7 +68,7 @@ export function Voluspa({name, chapter}: {name: string, chapter: string}) {
         <>«<Link
             target={"_blank"}
             className={"link linkOut"}
-            href={`https://norroen.info/src/edda/voluspa/`}>{name}</Link>»</>
+            href={`https://norroen.info/src/edda/voluspa/ru.html#${chapter}`}>{name}</Link>»</>
     )
 }
 
@@ -118,5 +118,68 @@ export function Beowulf({name, chapter}: {name: string, chapter: string}) {
     return (
         <>«<Link target={"_blank"} className={"link linkOut"}
                  href={"http://norroen.info/src/other/beowulf/beowulf.html"}>{name}</Link>»</>
+    )
+}
+
+export function Gisli({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={"http://norroen.info/src/isl/gisli/ru.html"}>{name}</Link>»</>
+    )
+}
+
+export function Thrym({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`http://norroen.info/src/edda/thrym/ru2.html#${chapter}`}>{name}</Link>»</>
+    )
+}
+
+export function Fafnis({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`https://norroen.info/src/edda/fafnis/ru.html#${chapter}`}>{name}</Link>»</>
+    )
+}
+
+export function OlafHelgSaga({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`https://norroen.info/src/konung/heimskringla/olaf-helg/ru.html#${chapter}`}>{name}</Link>»</>
+    )
+}
+
+export function Sighvatr({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`https://norse.ulver.com/src/sk/sighvatr.html#${chapter}`}>{name}</Link>»</>
+    )
+}
+
+export function OlafAlv({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`https://vk.com/@german_tradition-pryad-ob-olave-alve-geirstadira`}>{name}</Link>»</>
+    )
+}
+
+export function Kormak({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`https://norroen.info/src/isl/kormak/ru.html#${chapter}`}>{name}</Link>»</>
+    )
+}
+
+export function Vigaglum({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`https://norroen.info/src/isl/vigaglum/ru.html#${chapter}`}>{name}</Link>»</>
+    )
+}
+
+export function Brandkrossi({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`https://norroen.info/src/isl/brandkrossi/ru2.html#${chapter}`}>{name}</Link>»</>
     )
 }

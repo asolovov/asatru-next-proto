@@ -64,8 +64,8 @@ export function Alvar({name}: {name: string}) {
     return (
         <Link
             target={"_blank"}
-            className={"link linkOut"}
-            href={"https://norroen.info/wiki/%D0%90%D0%BB%D1%8C%D0%B2%D1%8B"}>{name}</Link>
+            className={"link linkOwn"}
+            href={"/encyclopedia/alvar"}>{name}</Link>
     )
 }
 

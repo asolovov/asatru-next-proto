@@ -212,7 +212,7 @@ export default function Home() {
                     («ансов», <b>ansuz</b> – божественных предков) у готов свидетельствует об исконном и общегерманском
                     характере веры в асов.
                 </p>
-                <SourceLink link={"https://en.wiktionary.org/wiki/áss"} text={"Этимология лова áss"} num={"1"}/>
+                <SourceLink link={"https://en.wiktionary.org/wiki/áss"} text={"Этимология слова áss"} num={"1"}/>
             </div>
         </main>
     )
