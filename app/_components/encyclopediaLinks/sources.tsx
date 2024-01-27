@@ -183,3 +183,24 @@ export function Brandkrossi({name, chapter}: {name: string, chapter: string}) {
                  href={`https://norroen.info/src/isl/brandkrossi/ru2.html#${chapter}`}>{name}</Link>»</>
     )
 }
+
+export function Vatnsd({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`http://norroen.info/src/isl/vatnsd/ru.html#${chapter}`}>{name}</Link>»</>
+    )
+}
+
+export function Vafthrudnis({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`http://norroen.info/src/edda/vafthrudnis/ru.html#${chapter}`}>{name}</Link>»</>
+    )
+}
+
+export function EgilSaga({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`http://norroen.info/src/isl/egil/ru.html#${chapter}`}>{name}</Link>»</>
+    )
+}
