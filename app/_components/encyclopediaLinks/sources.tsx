@@ -9,6 +9,15 @@ export function Gylfaginning({name, chapter}: {name: string, chapter: string}) {
     )
 }
 
+export function Skaldskaparmal({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link
+            target={"_blank"}
+            className={"link linkOut"}
+            href={`http://norroen.info/src/snorra/3ru.html#${chapter}`}>{name}</Link>»</>
+    )
+}
+
 export function Grimnirs({name, chapter}: {name: string, chapter: string}) {
     return (
         <>«<Link

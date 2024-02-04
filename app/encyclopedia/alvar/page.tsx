@@ -15,6 +15,7 @@ import {
 } from "@/app/_components/encyclopediaLinks/sources";
 import {Blot} from "@/app/_components/encyclopediaLinks/terms";
 import {Snorri} from "@/app/_components/encyclopediaLinks/history";
+import {Mjolnir} from "@/app/_components/encyclopediaLinks/artifacts";
 
 export const metadata: Metadata = {
     title: 'Асатру | Asatru | Альвы',
@@ -138,7 +139,7 @@ export default function Home() {
                             illt er með alfum;
                         </p>
                     </div>
-                    <Thrym name={"Песнь о Трюме, 7"} chapter={"7"}/>, о пропаже Мьёльнира
+                    <Thrym name={"Песнь о Трюме, 7"} chapter={"7"}/>, о пропаже <Mjolnir name={"Мьёльнира"}/>
                 </div>
                 <p>
                     и т.д. <Havamal name={"Речи Высокого, 159"} chapter={"159"}/> объединяют <Asir name={"асов"}/> и
