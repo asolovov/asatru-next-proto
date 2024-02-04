@@ -227,3 +227,17 @@ export function Landnamabok({name, chapter}: {name: string, chapter: string}) {
                  href={`http://norroen.info/src/lnb/`}>{name}</Link>»</>
     )
 }
+
+export function SturlungaNC({name}: {name: string}) {
+    return (
+        <><Link target={"_blank"} className={"link linkOwn"}
+                 href={`/encyclopedia/sturlunga`}>{name}</Link></>
+    )
+}
+
+export function Sturlunga({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOwn"}
+                 href={`/encyclopedia/sturlunga`}>{name}</Link>»</>
+    )
+}

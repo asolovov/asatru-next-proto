@@ -87,3 +87,11 @@ a {
   color: blueviolet;
   text-decoration-line: none;
 }
+
+.mainText {
+  font-size: 22px;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  margin-bottom: 100px;
+}

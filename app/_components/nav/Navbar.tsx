@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import "./navbar.css"
+import NavbarMenu from "@/app/_components/nav/NavMenu";
 
 export default function Navbar() {
     return (
@@ -11,6 +12,7 @@ export default function Navbar() {
                     <span>Асатру</span>
                 </div>
             </Link>
+            <NavbarMenu/>
         </nav>
     )
 }

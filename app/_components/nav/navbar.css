@@ -10,13 +10,6 @@
     background: steelblue;
 }
 
-@media screen and (max-width: 768px) {
-    .nav {
-        flex-wrap: wrap;
-        flex-basis: 100%;
-    }
-}
-
 .navLogoLink {
     color: white;
     display: flex;
@@ -25,4 +18,87 @@
     padding: 1rem;
     cursor: pointer;
     font-size: 20px;
+}
+
+.collapseNavBar {
+    display: flex;
+    align-items: center;
+    flex-basis: auto;
+    flex-grow: 1;
+}
+
+.navBarMenu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.navItem {
+    display: list-item;
+    color: white;
+    padding-right: 1rem;
+    font-size: 20px;
+
+    &:hover {
+        color: goldenrod;
+    }
+}
+
+.bars {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .bars {
+        display: none;
+    }
+
+    .navBarMenu {
+        flex-direction: row;
+    }
+
+    .collapseNavBar {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cnbShow {
+        opacity: 1;
+        max-height: 200px;
+    }
+
+    .cnbHide {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    .bars {
+        display: block;
+        margin-right: 30px;
+    }
+
+    .navItem {
+        padding-bottom: 1rem;
+    }
+
+    .navBarMenu {
+        flex-direction: column;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        flex-basis: 100%;
+    }
+
+    .collapseNavBar {
+        display: block;
+        transition: all 0.5s;
+        overflow: hidden;
+        flex-basis: 100%;
+        margin-left: 10px;
+    }
 }

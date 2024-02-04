@@ -271,5 +271,16 @@ export function Egir({name}: {name: string}) {
     )
 }
 
+export function Alsvin({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link linkOwn"}
+            href={"/encyclopedia/alsvin-arvakr"}>{name}</Link>
+    )
+}
+
+
+
 
 
