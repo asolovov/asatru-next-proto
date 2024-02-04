@@ -213,3 +213,17 @@ export function EgilSaga({name, chapter}: {name: string, chapter: string}) {
                  href={`http://norroen.info/src/isl/egil/ru.html#${chapter}`}>{name}</Link>»</>
     )
 }
+
+export function Lokasenna({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`http://norroen.info/src/edda/lokasenna/rut.htmll#${chapter}`}>{name}</Link>»</>
+    )
+}
+
+export function Landnamabok({name, chapter}: {name: string, chapter: string}) {
+    return (
+        <>«<Link target={"_blank"} className={"link linkOut"}
+                 href={`http://norroen.info/src/lnb/`}>{name}</Link>»</>
+    )
+}
