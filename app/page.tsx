@@ -18,6 +18,7 @@ import {
 } from "@/app/_components/encyclopediaLinks/gods";
 import {Asgard} from "@/app/_components/encyclopediaLinks/heims";
 import {Blot, Heathenry} from "@/app/_components/encyclopediaLinks/terms";
+import {Mjolnir} from "@/app/_components/encyclopediaLinks/artifacts";
 
 export default function Home() {
     return (
@@ -39,8 +40,8 @@ export default function Home() {
                     источники наших знаний о древней вере дошли до наших дней в исландских рукописях
                     XII-XIV веков: в поэмах <Edda
                         name={"Старшей Эдды"} chapter={""}/>,
-                    <SnorriEdda name={"Младшей Эдды"} chapter={""}/> исландца <Snorri name={"Снорри Стурлусона"}/>,
-                    <Sagas name={"исландских сагах"} chapter={""}/> и
+                    <SnorriEdda name={"Младшей Эдды"} chapter={""}/> исландца <Snorri name={"Снорри Стурлусона"}/>, <Sagas
+                        name={"исландских сагах"} chapter={""}/> и
                     стихотворениях скальдов. Поэтому в Асатру
                     используется в основном <b>древнескандинавская</b> терминология, также встречается
                     использование <b>древнего готского</b>, <b>староанглийского</b> и <b>прагерманского</b> языков.
@@ -185,7 +186,7 @@ export default function Home() {
             </h2>
             <hr/>
             <div className={styles.mainText}>
-                <p>Основными символами в Асатру является Молот Тора (Мьёльнир) в виде подвесок для
+                <p>Основными символами в Асатру является <Mjolnir name={"Молот Тора"}/> (Мьёльнир) в виде подвесок для
                     личного ношения или в виде символического изображения молота для проведения
                     обрядов, а также так называемое «кольцо клятв» — разомкнутый браслет, на котором
                     приносятся клятвы именем богов. Также распространена символика копья, оружия Одина,

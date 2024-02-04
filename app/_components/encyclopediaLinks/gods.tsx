@@ -22,8 +22,8 @@ export function Njord({name}: {name: string}) {
     return (
         <Link
             target={"_blank"}
-            className={"link linkOut"}
-            href={"https://norroen.info/wiki/%D0%9D%D1%8C%D1%91%D1%80%D0%B4"}>{name}</Link>
+            className={"link linkOwn"}
+            href={"/encyclopedia/njord"}>{name}</Link>
     )
 }
 
