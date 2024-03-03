@@ -6,6 +6,9 @@ import {Asgard} from "@/app/_components/encyclopediaLinks/heims";
 import {Blot} from "@/app/_components/encyclopediaLinks/terms";
 import {Mjolnir} from "@/app/_components/encyclopediaLinks/artifacts";
 import {SturlungaNC} from "@/app/_components/encyclopediaLinks/sources";
+import {fetchEncyclopediaArticle, fetchEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
+import EncyclopediaArticles from "@/app/_components/encyclopedia/articles";
+import LogClient from "@/app/_components/alert/logClient";
 
 export const metadata: Metadata = {
     title: 'Асатру | Asatru | Энциклопедия',
@@ -29,9 +32,12 @@ export const metadata: Metadata = {
     ]
 }
 
-export default function Home() {
+export default async function Home() {
+    const {articles, error} = await fetchEncyclopediaArticles();
+
     return (
         <main className={"main"}>
+            {error && <LogClient msg={error.debug}/>}
             <h1 className={"point"}>Энциклопедия</h1>
             <div className={"mainText"}>
                 <p>
@@ -48,38 +54,39 @@ export default function Home() {
                     href={`http://norroen.info`}>Северная Слава</Link>», на наш взгляд - лучший сборник
                     оригиналов и переводов источников по Северной Традиции.
                 </p>
-                <ul>
-                    <li>
-                        <Alsvin name={"Альсвинн и Арвак"}/>
-                    </li>
-                    <li>
-                        <Alvar name={"Альвы"}/>
-                    </li>
-                    <li>
-                        <Asgard name={"Асгард"}/>
-                    </li>
-                    <li>
-                        <Asir name={"Асы"}/>
-                    </li>
-                    <li>
-                        <Audumla name={"Аудумла"}/>
-                    </li>
-                    <li>
-                        <Blot name={"Блот (жертвоприношение)"}/>
-                    </li>
-                    <li>
-                        <Mjolnir name={"Мёльнир или Молот Тора"}/>
-                    </li>
-                    <li>
-                        <Njord name={"Ньёрд"}/>
-                    </li>
-                    <li>
-                        <SturlungaNC name={"Сага о Стурлунгах"}/>
-                    </li>
-                    <li>
-                        <Vanir name={"Ваны"}/>
-                    </li>
-                </ul>
+                {articles ? <EncyclopediaArticles articles={articles}/> : null}
+                {/*<ul>*/}
+                {/*    <li>*/}
+                {/*        <Alsvin name={"Альсвинн и Арвак"}/>*/}
+                {/*    </li>*/}
+                {/*    <li>*/}
+                {/*        <Alvar name={"Альвы"}/>*/}
+                {/*    </li>*/}
+                {/*    <li>*/}
+                {/*        <Asgard name={"Асгард"}/>*/}
+                {/*    </li>*/}
+                {/*    <li>*/}
+                {/*        <Asir name={"Асы"}/>*/}
+                {/*    </li>*/}
+                {/*    <li>*/}
+                {/*        <Audumla name={"Аудумла"}/>*/}
+                {/*    </li>*/}
+                {/*    <li>*/}
+                {/*        <Blot name={"Блот (жертвоприношение)"}/>*/}
+                {/*    </li>*/}
+                {/*    <li>*/}
+                {/*        <Mjolnir name={"Мёльнир или Молот Тора"}/>*/}
+                {/*    </li>*/}
+                {/*    <li>*/}
+                {/*        <Njord name={"Ньёрд"}/>*/}
+                {/*    </li>*/}
+                {/*    <li>*/}
+                {/*        <SturlungaNC name={"Сага о Стурлунгах"}/>*/}
+                {/*    </li>*/}
+                {/*    <li>*/}
+                {/*        <Vanir name={"Ваны"}/>*/}
+                {/*    </li>*/}
+                {/*</ul>*/}
             </div>
         </main>
     )
