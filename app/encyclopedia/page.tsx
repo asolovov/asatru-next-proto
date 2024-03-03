@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     ]
 }
 
-export default function Home() {
+export default async function Home() {
     return (
         <main className={"main"}>
             <h1 className={"point"}>Энциклопедия</h1>
