@@ -1,5 +1,6 @@
 import {cookies} from "next/headers";
 import {redirect} from "next/navigation";
+import {fetchAut} from "@/lib/asatruEncyclopediaAPI/autAPI";
 // import AddArticle from "@/app/_components/admin/addArticle";
 // import {fetchEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
 // import ArticlesListAdmin from "@/app/_components/admin/articlesListAdmin";
@@ -10,6 +11,12 @@ export default async function Admin() {
 
     if (!aut) {
         redirect("/admin/login");
+    }
+
+    const {ok} = await fetchAut(aut.value);
+
+    if (!ok) {
+        redirect("/amin/login");
     }
 
     // const {articles, error} = await fetchEncyclopediaArticles();
