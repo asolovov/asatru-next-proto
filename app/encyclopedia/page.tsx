@@ -6,6 +6,7 @@ import {Asgard} from "@/app/_components/encyclopediaLinks/heims";
 import {Blot} from "@/app/_components/encyclopediaLinks/terms";
 import {Mjolnir} from "@/app/_components/encyclopediaLinks/artifacts";
 import {SturlungaNC} from "@/app/_components/encyclopediaLinks/sources";
+import {fetchEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
 
 export const metadata: Metadata = {
     title: 'Асатру | Asatru | Энциклопедия',
@@ -29,7 +30,9 @@ export const metadata: Metadata = {
     ]
 }
 
-export default function Home() {
+export default async function Home() {
+    const resp = await fetchEncyclopediaArticles();
+
     return (
         <main className={"main"}>
             <h1 className={"point"}>Энциклопедия</h1>
