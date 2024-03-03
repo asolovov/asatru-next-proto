@@ -1,11 +1,11 @@
-import {ENCYCLOPEDIA_API_URL} from "@/lib/asatruEncyclopediaAPI/config";
+import {encyclopediaApiUrl} from "@/lib/asatruEncyclopediaAPI/config";
 import {getInternalErr, getUnauthorisedErr, getUnknownErr} from "@/lib/asatruEncyclopediaAPI/errors";
 import {AutResponse} from "@/lib/asatruEncyclopediaAPI/models";
 
 export async function fetchAut(key: string): Promise<AutResponse> {
     let resp: Response;
     try {
-        resp = await fetch(`${ENCYCLOPEDIA_API_URL}/admin/aut`, {
+        resp = await fetch(`${encyclopediaApiUrl()}/admin/aut`, {
             method: 'GET',
             headers: {
                 "x-api-key": key
