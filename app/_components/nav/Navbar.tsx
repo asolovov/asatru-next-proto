@@ -8,8 +8,8 @@ export default function Navbar() {
         <nav className={"nav"}>
             <Link href={"/"} passHref>
                 <div className={"navLogoLink"}>
-                    <Image src={"/valknut_white.png"} alt={"valknut"} height={50} width={50}/>
-                    <span>Асатру</span>
+                    <Image src={"/ring_white.png"} alt={"ring"} height={50} width={50}/>
+                    <span style={{marginLeft: 10}}>Ásatrú</span>
                 </div>
             </Link>
             <NavbarMenu/>

@@ -1,6 +1,6 @@
 'use client'
 
-import {fetchAut} from "@/lib/asatruEncyclopediaAPI/autAPI";
+import {fetchAut} from "@/lib/asatruEncyclopediaAPI/adminAPI";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
 import Alert, {AlertType} from "@/app/_components/alert/alert";

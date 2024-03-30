@@ -1,35 +1,21 @@
 import type {Metadata} from "next";
 import Link from "next/link";
-import {Alsvin, Njord} from "@/app/_components/encyclopediaLinks/gods";
-import {Alvar, Asir, Audumla, Vanir} from "@/app/_components/encyclopediaLinks/beings";
-import {Asgard} from "@/app/_components/encyclopediaLinks/heims";
-import {Blot} from "@/app/_components/encyclopediaLinks/terms";
-import {Mjolnir} from "@/app/_components/encyclopediaLinks/artifacts";
-import {SturlungaNC} from "@/app/_components/encyclopediaLinks/sources";
+import {fetchEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
+import {defaultMetadata} from "@/app/_components/metadata/defaultMetadata";
 
-export const metadata: Metadata = {
-    title: 'Асатру | Asatru | Энциклопедия',
-    description: `Энциклопедия asatru.live: статьи тщательно отобраны или написаны нашей командой для объективного описания терминов, часто употребляемых в Асатру`,
-    openGraph: {
-        images: [{url: "https://asatru.live/og.jpg"}]
-    },
-    keywords: [
-        "Асатру",
-        "Северная Традиция",
-        "Блот",
-        "Германское язычество",
-        "Asatru",
-        "Blot",
-        "Heathenry",
-        "Северное язычество",
-        "Скандинавское язычество",
-        "Скандинавские боги",
-        "Германские боги",
-        "Религиия викингов"
-    ]
+export async function generateMetadata(
+    {params}:{params: {articleID: string}}
+): Promise<Metadata> {
+    let metadata = {...defaultMetadata};
+    metadata.title = `${metadata.title} | Энциклопедия`;
+    metadata.description = `Энциклопедия asatru.live: статьи тщательно отобраны или написаны нашей командой для объективного описания терминов, часто употребляемых в Асатру`;
+
+    return metadata
 }
 
 export default async function Home() {
+    const {articles, error} = await fetchEncyclopediaArticles();
+
     return (
         <main className={"main"}>
             <h1 className={"point"}>Энциклопедия</h1>
@@ -48,38 +34,19 @@ export default async function Home() {
                     href={`http://norroen.info`}>Северная Слава</Link>», на наш взгляд - лучший сборник
                     оригиналов и переводов источников по Северной Традиции.
                 </p>
-                <ul>
-                    <li>
-                        <Alsvin name={"Альсвинн и Арвак"}/>
-                    </li>
-                    <li>
-                        <Alvar name={"Альвы"}/>
-                    </li>
-                    <li>
-                        <Asgard name={"Асгард"}/>
-                    </li>
-                    <li>
-                        <Asir name={"Асы"}/>
-                    </li>
-                    <li>
-                        <Audumla name={"Аудумла"}/>
-                    </li>
-                    <li>
-                        <Blot name={"Блот (жертвоприношение)"}/>
-                    </li>
-                    <li>
-                        <Mjolnir name={"Мёльнир или Молот Тора"}/>
-                    </li>
-                    <li>
-                        <Njord name={"Ньёрд"}/>
-                    </li>
-                    <li>
-                        <SturlungaNC name={"Сага о Стурлунгах"}/>
-                    </li>
-                    <li>
-                        <Vanir name={"Ваны"}/>
-                    </li>
-                </ul>
+                <Link href={"/encyclopedia/search"} className={"link linkOwn"}>Поиск по энциклопедии</Link>
+                {articles &&
+                    <ul>{
+                        articles.map(a => a &&
+                            <li key={a.id}>
+                                <Link
+                                    target={"_blank"}
+                                    className={"link linkOwn"}
+                                    href={`/encyclopedia/${a.id}`}>{a.title}
+                                </Link>
+                            </li>)
+                    }</ul>
+                }
             </div>
         </main>
     )

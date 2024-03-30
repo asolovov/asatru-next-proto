@@ -16,6 +16,41 @@ a {
   box-sizing: border-box;
 }
 
+input, textarea {
+  border: 1px solid Silver;
+  border-radius: 4px;
+  padding: 0.65rem 0.75rem;
+  width: 100%;
+}
+
+input:hover, textarea:hover {
+  border: 1px solid DarkGray;
+}
+
+input:focus, textarea:focus {
+  outline: none !important;
+  border:  1px solid steelblue;
+  box-shadow: 0 0 0 1px steelblue;
+}
+
+button {
+  border-radius: 4px;
+  background: SteelBlue;
+  padding: 10px 22px;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover {
+  transition: all 0.2s ease-in-out;
+  background: white;
+  color: SteelBlue;
+  box-shadow: 0 0 0 1px steelblue;
+}
+
 .main {
   margin-top: 100px;
   margin-left: 2%;
@@ -59,6 +94,11 @@ a {
   flex: 0 0 auto;
 }
 
+.col3 {
+  width: 33.3%;
+  flex: 0 0 auto;
+}
+
 .point {
   color: darkslateblue;
 }
@@ -94,41 +134,6 @@ a {
   letter-spacing: 1px;
   line-height: 1.5;
   margin-bottom: 100px;
-}
-
-.input {
-  border: 1px solid Silver;
-  border-radius: 4px;
-  padding: 0.65rem 0.75rem;
-  width: 100%;
-}
-
-.input:hover {
-  border: 1px solid DarkGray;
-}
-
-.input:focus {
-  outline: none !important;
-  border:  1px solid steelblue;
-  box-shadow: 0 0 0 1px steelblue;
-}
-
-.btn {
-  border-radius: 4px;
-  background: SteelBlue;
-  padding: 10px 22px;
-  color: white;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn:hover {
-  transition: all 0.2s ease-in-out;
-  background: white;
-  color: SteelBlue;
-  box-shadow: 0 0 0 1px steelblue;
 }
 
 .alertContainer {

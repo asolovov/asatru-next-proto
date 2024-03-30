@@ -1,5 +1,14 @@
 import {Err} from "@/lib/asatruEncyclopediaAPI/errors";
 
+export type APIErr = {
+    message: string
+    code: number
+}
+
+export type APIArticlesResponse = {
+    articles: EncyclopediaArticle[]
+}
+
 export type EncyclopediaArticle = {
     id: string
     title: string
@@ -8,6 +17,14 @@ export type EncyclopediaArticle = {
     published: number
     updated: number
     author: EncyclopediaAuthor
+    metadata: EncyclopediaMetadata
+}
+
+export type EncyclopediaMetadata = {
+    title: string
+    description: string
+    og_path: string
+    keywords: string[]
 }
 
 export type EncyclopediaAuthor = {
@@ -18,10 +35,21 @@ export type AddEncyclopediaArticleRequest = {
     id: string
     title: string
     body: string
+    metadata: EncyclopediaMetadata
 }
 
 export type ChangeEncyclopediaArticleRequest = {
     body: string
+}
+
+export type ArticlesResponse = {
+    articles: EncyclopediaArticle[]
+    error: Err | undefined
+}
+
+export type ArticleResponse = {
+    article: EncyclopediaArticle | undefined
+    error: Err | undefined
 }
 
 export type AutResponse = {
