@@ -44,8 +44,7 @@ export default function Search() {
             <input placeholder={"Поисковый запрос..."} onChange={e => handleQuery(e)}/>
             <div style={{marginTop: 20, padding: 10}}>
                 <ul>
-                {articles && articles.map(a => a &&  <li><Link
-                    key={a.id}
+                {articles && articles.map(a => a &&  <li key={a.id}><Link
                     target={"_blank"}
                     className={"link linkOwn"}
                     href={`/encyclopedia/${a.id}`}>{a.title}
