@@ -69,6 +69,48 @@ button:hover {
   }
 }
 
+.articlesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.articleCol {
+  flex: 0 0 auto;
+  width: 16.666666%;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1640px) {
+  .articleCol {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .articleCol {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 1135px) {
+  .articleCol {
+    width: 33.333333%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .articleCol {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .articleCol {
+    width: 100%;
+  }
+}
 
 .articleContainer {
   display: block;
@@ -158,4 +200,20 @@ button:hover {
   padding-left: 10px;
   cursor: pointer;
   color: white;
+}
+
+.controlItem {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.controlItemActive {
+  font-size: 30px;
+  margin-right: 10px;
+  color: cornflowerblue;
+}
+
+.controlItem:hover {
+  color: darkslateblue;
+  cursor: pointer;
 }

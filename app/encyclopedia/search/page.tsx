@@ -6,12 +6,18 @@ import {debounce} from "lodash";
 import {fetchEncyclopediaArticles, queryEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
 import {EncyclopediaArticle} from "@/lib/asatruEncyclopediaAPI/models";
 import Link from "next/link";
+import ArticleCard from "@/app/_components/articles/articleCard";
+import {CgMenuGridR, CgList} from "react-icons/cg";
+import {tree} from "next/dist/build/templates/app-page";
+import ArticlesView from "@/app/_components/articles/articlesView";
+
 
 export default function Search() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
     const [articles, setArticles] = useState<EncyclopediaArticle[]>([]);
+    const [isList, setIsList] = useState(false);
 
     useEffect(() => {
         const query = searchParams.get("q");
@@ -32,7 +38,7 @@ export default function Search() {
     }, [searchParams, setArticles])
 
     const handleQuery = useCallback(
-        debounce( async (event: ChangeEvent<HTMLInputElement>) => {
+        debounce(async (event: ChangeEvent<HTMLInputElement>) => {
             router.push(`/encyclopedia/search?q=${event.target.value}`)
         }, 1000),
         []
@@ -42,15 +48,7 @@ export default function Search() {
         <main className={"main"}>
             <h1 className={"point"}>Поиск по энциклопедии</h1>
             <input placeholder={"Поисковый запрос..."} onChange={e => handleQuery(e)}/>
-            <div style={{marginTop: 20, padding: 10}}>
-                <ul>
-                {articles && articles.map(a => a &&  <li key={a.id}><Link
-                    target={"_blank"}
-                    className={"link linkOwn"}
-                    href={`/encyclopedia/${a.id}`}>{a.title}
-                </Link></li>)}
-                </ul>
-            </div>
+            <ArticlesView articles={articles}/>
         </main>
     )
 }

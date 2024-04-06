@@ -2,6 +2,8 @@ import type {Metadata} from "next";
 import Link from "next/link";
 import {fetchEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
 import {defaultMetadata} from "@/app/_components/metadata/defaultMetadata";
+import ArticleCard from "@/app/_components/articles/articleCard";
+import ArticlesView from "@/app/_components/articles/articlesView";
 
 export async function generateMetadata(
     {params}:{params: {articleID: string}}
@@ -21,7 +23,7 @@ export default async function Home() {
             <h1 className={"point"}>Энциклопедия</h1>
             <div className={"mainText"}>
                 <p>
-                    Сатьи энциклопедии были тщательно отобраны или написаны эксклюзивно для портала <b
+                    Статьи энциклопедии были тщательно отобраны или написаны эксклюзивно для портала <b
                     className={"point"}>asatru.live</b> нашей небольшой командой с целью максимально объективно и
                     всесторонне описать те или иные
                     термины, повсеместно встречающиеся среди последователей Асатру. Энциклопедия постоянно поплоняется
@@ -35,18 +37,7 @@ export default async function Home() {
                     оригиналов и переводов источников по Северной Традиции.
                 </p>
                 <Link href={"/encyclopedia/search"} className={"link linkOwn"}>Поиск по энциклопедии</Link>
-                {articles &&
-                    <ul>{
-                        articles.map(a => a &&
-                            <li key={a.id}>
-                                <Link
-                                    target={"_blank"}
-                                    className={"link linkOwn"}
-                                    href={`/encyclopedia/${a.id}`}>{a.title}
-                                </Link>
-                            </li>)
-                    }</ul>
-                }
+                <ArticlesView articles={articles}/>
             </div>
         </main>
     )
