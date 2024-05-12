@@ -4,10 +4,15 @@ import {EncyclopediaArticle} from "@/lib/asatruEncyclopediaAPI/models";
 import {CgList, CgMenuGridR} from "react-icons/cg";
 import Link from "next/link";
 import ArticleCard from "@/app/_components/articles/articleCard";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function ArticlesView({articles}: { articles: EncyclopediaArticle[] }) {
-    const [isList, setIsList] = useState(localStorage.getItem("isList") === "true");
+    const [isList, setIsList] = useState(false);
+
+    useEffect(() => {
+        setIsList(window.localStorage.getItem("isList") === "true")
+    }, [isList]);
+
     return (
         <div style={{marginTop: 20, padding: 10}}>
             <CgMenuGridR className={isList ? "controlItem" : "controlItemActive"} onClick={() => {
