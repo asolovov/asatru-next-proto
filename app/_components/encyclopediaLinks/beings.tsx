@@ -51,6 +51,32 @@ export function Nornir({name}: {name: string}) {
     )
 }
 
+export function Hamingja({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link linkOwn"}
+            href={"/encyclopedia/hamingja"}>{name}</Link>
+    )
+}
+export function Jormundgandr({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link linkOut"}
+            href={"https://norroen.info/wiki/%D0%81%D1%80%D0%BC%D1%83%D0%BD%D0%B3%D0%B0%D0%BD%D0%B4"}>{name}</Link>
+    )
+}
+
+export function Fylgja({name}: {name: string}) {
+    return (
+        <Link
+            target={"_blank"}
+            className={"link linkOwn"}
+            href={"/encyclopedia/fylgja"}>{name}</Link>
+    )
+}
+
 export function Valkyrir({name}: {name: string}) {
     return (
         <Link

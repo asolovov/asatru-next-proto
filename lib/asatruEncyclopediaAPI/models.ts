@@ -18,6 +18,12 @@ export type EncyclopediaArticle = {
     updated: number
     author: EncyclopediaAuthor
     metadata: EncyclopediaMetadata
+    toc: EncyclopediaTOCPoint[]
+}
+
+export type EncyclopediaTOCPoint = {
+    name: string
+    id: string
 }
 
 export type EncyclopediaMetadata = {

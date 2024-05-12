@@ -1,6 +1,7 @@
 import {fetchEncyclopediaArticleByID} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
 import {Metadata, ResolvingMetadata} from "next";
 import {defaultMetadata} from "@/app/_components/metadata/defaultMetadata";
+import Link from "next/link";
 
 export async function generateMetadata(
     {params}:{params: {articleID: string}}
@@ -36,6 +37,11 @@ export default async function ViewArticle({params}:{params: {articleID: string}}
         <main className={"main"}>
             {article &&
                 <div className={"articleContainer"}>
+                    {article.toc.length > 0 && <>
+                        <h2 className={"point"}>Содержание</h2>
+                        {article.toc.map(t =><>
+                            <Link className={"link linkToc"} href={`#${t.id}`}>{t.name}</Link><br/></>)}
+                    </>}
                     <h1 className={"point"}>{article.title}</h1>
                     <div dangerouslySetInnerHTML={{__html: article.body}}/>
                 </div>

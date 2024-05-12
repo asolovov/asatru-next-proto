@@ -184,8 +184,8 @@ export function Sif({name}: {name: string}) {
     return (
         <Link
             target={"_blank"}
-            className={"link linkOut"}
-            href={"http://norroen.info/wiki/Сив"}>{name}</Link>
+            className={"link linkOwn"}
+            href={"/encyclopedia/sif"}>{name}</Link>
     )
 }
 

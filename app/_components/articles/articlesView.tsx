@@ -7,11 +7,18 @@ import ArticleCard from "@/app/_components/articles/articleCard";
 import {useState} from "react";
 
 export default function ArticlesView({articles}: { articles: EncyclopediaArticle[] }) {
-    const [isList, setIsList] = useState(false);
+    const [isList, setIsList] = useState(localStorage.getItem("isList") === "true");
     return (
         <div style={{marginTop: 20, padding: 10}}>
-            <CgMenuGridR className={isList ? "controlItem" : "controlItemActive"} onClick={() => setIsList(false)}/>
-            <CgList className={isList ? "controlItemActive" : "controlItem"} onClick={() => setIsList(true)}/>
+            <CgMenuGridR className={isList ? "controlItem" : "controlItemActive"} onClick={() => {
+                setIsList(false);
+                localStorage.setItem("isList", "false")
+            }
+            }/>
+            <CgList className={isList ? "controlItemActive" : "controlItem"} onClick={() => {
+                setIsList(true);
+                localStorage.setItem("isList", "true")
+            }}/>
             {articles &&
                 <>{
                     isList ?
