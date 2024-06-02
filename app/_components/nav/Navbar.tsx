@@ -12,7 +12,16 @@ export default function Navbar() {
                     <span style={{marginLeft: 10}}>Ásatrú</span>
                 </div>
             </Link>
-            <NavbarMenu/>
+            {/*<div>*/}
+                <div className={`notCollapseNavBar`}>
+                    <ul className={"navBarMenu"}>
+                        <li className={"navItemFixed"}>
+                            <Link href={"/encyclopedia"}>Энциклопедия</Link>
+                        </li>
+                    </ul>
+                </div>
+            {/*</div>*/}
+            {/*<NavbarMenu/>*/}
         </nav>
     )
 }

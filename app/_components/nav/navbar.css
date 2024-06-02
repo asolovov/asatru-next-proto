@@ -20,6 +20,14 @@
     font-size: 25px;
 }
 
+.notCollapseNavBar {
+    display: flex;
+    align-items: center;
+    flex-basis: auto;
+    flex-grow: 1;
+}
+
+
 .collapseNavBar {
     display: flex;
     align-items: center;
@@ -32,6 +40,17 @@
     list-style: none;
     margin: 0;
     padding: 10px;
+}
+
+.navItemFixed {
+    display: list-item;
+    color: white;
+    padding-right: 1rem;
+    font-size: 20px;
+
+    &:hover {
+        color: goldenrod;
+    }
 }
 
 .navItem {
