@@ -1,7 +1,10 @@
 import {cookies} from "next/headers";
 import {redirect} from "next/navigation";
 import {fetchAut} from "@/lib/asatruEncyclopediaAPI/adminAPI";
-import {fetchEncyclopediaArticleByID} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
+import {
+    fetchEncyclopediaArticleByID,
+    fetchEncyclopediaArticleCategories
+} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
 import EditArticle from "@/app/_components/admin/editArticle";
 
 export default async function EditArticleByID({params}:{params: {articleID: string}}) {
@@ -19,10 +22,11 @@ export default async function EditArticleByID({params}:{params: {articleID: stri
     }
 
     const {article, error} = await fetchEncyclopediaArticleByID(params.articleID);
+    const getCategoriesResp = await fetchEncyclopediaArticleCategories();
 
     return (
         <main className={"main"}>
-            {article && <EditArticle article={article} aut={aut.value}/>}
+            {article && getCategoriesResp.categories && <EditArticle article={article} aut={aut.value} categories={getCategoriesResp.categories}/>}
         </main>
     )
 }

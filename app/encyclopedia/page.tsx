@@ -1,9 +1,10 @@
 import type {Metadata} from "next";
 import Link from "next/link";
-import {fetchEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
+import {fetchEncyclopediaArticleCategories, fetchEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
 import {defaultMetadata} from "@/app/_components/metadata/defaultMetadata";
 import ArticleCard from "@/app/_components/articles/articleCard";
 import ArticlesView from "@/app/_components/articles/articlesView";
+import AllArticles from "@/app/_components/articles/allArticles";
 
 export async function generateMetadata(
     {params}:{params: {articleID: string}}
@@ -17,6 +18,11 @@ export async function generateMetadata(
 
 export default async function Home() {
     const {articles, error} = await fetchEncyclopediaArticles();
+    let {categories} = await fetchEncyclopediaArticleCategories();
+    categories?.push({name: "Все статьи", slug: "all"});
+    if (!categories) {
+        categories = [];
+    }
 
     return (
         <main className={"main"}>
@@ -36,8 +42,7 @@ export default async function Home() {
                     href={`http://norroen.info`}>Северная Слава</Link>», на наш взгляд - лучший сборник
                     оригиналов и переводов источников по Северной Традиции.
                 </p>
-                <Link href={"/encyclopedia/search"} className={"link linkOwn"}>Поиск по энциклопедии</Link>
-                <ArticlesView articles={articles}/>
+                <AllArticles articles={articles} categories={categories} />
             </div>
         </main>
     )

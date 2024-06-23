@@ -3,12 +3,12 @@
 import {useRouter, useSearchParams} from "next/navigation";
 import {ChangeEvent, useCallback, useEffect, useState} from "react";
 import {debounce} from "lodash";
-import {fetchEncyclopediaArticles, queryEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
-import {EncyclopediaArticle} from "@/lib/asatruEncyclopediaAPI/models";
-import Link from "next/link";
-import ArticleCard from "@/app/_components/articles/articleCard";
-import {CgMenuGridR, CgList} from "react-icons/cg";
-import {tree} from "next/dist/build/templates/app-page";
+import {
+    fetchEncyclopediaArticleCategories,
+    fetchEncyclopediaArticles,
+    queryEncyclopediaArticles
+} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
+import {Category, EncyclopediaArticle} from "@/lib/asatruEncyclopediaAPI/models";
 import ArticlesView from "@/app/_components/articles/articlesView";
 
 
@@ -17,10 +17,18 @@ export default function Search() {
     const searchParams = useSearchParams();
 
     const [articles, setArticles] = useState<EncyclopediaArticle[]>([]);
-    const [isList, setIsList] = useState(false);
+    const [categories, setCategories] = useState<Category[]>([])
+    const [category, setCategory] = useState("all")
 
     useEffect(() => {
         const query = searchParams.get("q");
+
+        fetchEncyclopediaArticleCategories().then(res => {
+            if (res.categories) {
+                res.categories?.push({name: "Все статьи", slug: "all"});
+                setCategories(res.categories)
+            }
+        })
 
         if (query) {
             queryEncyclopediaArticles(query).then(res => {
@@ -48,7 +56,7 @@ export default function Search() {
         <main className={"main"}>
             <h1 className={"point"}>Поиск по энциклопедии</h1>
             <input placeholder={"Поисковый запрос..."} onChange={e => handleQuery(e)}/>
-            <ArticlesView articles={articles}/>
+            <ArticlesView articles={articles} categories={categories} category={category} setCategory={setCategory}/>
         </main>
     )
 }

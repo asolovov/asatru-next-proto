@@ -1,7 +1,7 @@
 import {cookies} from "next/headers";
 import {redirect} from "next/navigation";
 import {fetchAut} from "@/lib/asatruEncyclopediaAPI/adminAPI";
-import {fetchEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
+import {fetchEncyclopediaArticleCategories, fetchEncyclopediaArticles} from "@/lib/asatruEncyclopediaAPI/articlesAPI";
 import AddArticle from "@/app/_components/admin/addArticle";
 import ArticlesListAdmin from "@/app/_components/admin/ArticlesListAdmin";
 
@@ -19,12 +19,13 @@ export default async function Admin() {
         redirect("/admin/login");
     }
 
-    const {articles, error} = await fetchEncyclopediaArticles();
+    const getArticlesResp = await fetchEncyclopediaArticles();
+    const getCategoriesResp = await fetchEncyclopediaArticleCategories();
 
     return (
         <main className={"main"}>
-            {articles && <ArticlesListAdmin articles={articles}/>}
-            <AddArticle aut={aut.value}/>
+            {getArticlesResp.articles && <ArticlesListAdmin articles={getArticlesResp.articles}/>}
+            {getCategoriesResp.categories && <AddArticle aut={aut.value} categories={getCategoriesResp.categories}/>}
         </main>
     )
 }

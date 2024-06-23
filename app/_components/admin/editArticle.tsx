@@ -2,11 +2,11 @@
 
 import {FormEvent, useState} from "react";
 import Alert, {AlertType} from "@/app/_components/alert/alert";
-import {EncyclopediaArticle} from "@/lib/asatruEncyclopediaAPI/models";
+import {Category, EncyclopediaArticle} from "@/lib/asatruEncyclopediaAPI/models";
 import {deleteArticle, updateArticle} from "@/lib/asatruEncyclopediaAPI/adminAPI";
 import {redirect, useRouter} from "next/navigation";
 
-export default function EditArticle({aut, article}: { aut: string, article: EncyclopediaArticle }) {
+export default function EditArticle({aut, article, categories}: { aut: string, article: EncyclopediaArticle,categories: Category[] }) {
     const router = useRouter();
 
     const [slug, setSlug] = useState(article.id);
@@ -16,6 +16,7 @@ export default function EditArticle({aut, article}: { aut: string, article: Ency
     const [metaDescription, setMetaDescription] = useState(article.metadata.description);
     const [metaOG, setMetaOG] = useState(article.metadata.og_path);
     const [metaKeywords, setMetaKeywords] = useState(article.metadata.keywords.join(","));
+    const [category, setCategory] = useState(article.category);
 
     const [msg, setMsg] = useState("");
     const [alertType, setAlertType] = useState("");
@@ -46,6 +47,7 @@ export default function EditArticle({aut, article}: { aut: string, article: Ency
                 id: slug,
                 title: title,
                 body: body,
+                category: category,
                 metadata: {
                     title: metaTitle,
                     og_path: metaOG,
@@ -76,14 +78,20 @@ export default function EditArticle({aut, article}: { aut: string, article: Ency
             <form onSubmit={(e) => submit(e)}>
                 {msg ? <Alert alertType={alertType as AlertType} msg={msg} close={close}/> : null}
                 <div className={"row"}>
-                    <input placeholder={"Title"} className={"col2"} value={title} onInput={(e) => {
+                    <input placeholder={"Title"} className={"col3"} value={title} onInput={(e) => {
                         const target = e.target as typeof e.target & { value: string };
                         setTitle(target.value);
                     }} required/>
-                    <input placeholder={"Slug"} className={"col2"} value={slug} onInput={(e) => {
+                    <input placeholder={"Slug"} className={"col3"} value={slug} onInput={(e) => {
                         const target = e.target as typeof e.target & { value: string };
                         setSlug(target.value);
                     }} required/>
+                    <select className={"col3"} defaultValue={category} onChange={e => {
+                        const target = e.target.value;
+                        setCategory(target);
+                    }}>
+                        {categories.map(c => <option key={c.slug} value={c.slug}>{c.name}</option>)}
+                    </select>
                 </div>
                 <div className={"row"}>
                     <input placeholder={"Metadata title"} className={"col3"} value={metaTitle} onInput={(e) => {

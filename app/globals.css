@@ -16,11 +16,15 @@ a {
   box-sizing: border-box;
 }
 
-input, textarea {
+input, textarea, select {
   border: 1px solid Silver;
   border-radius: 4px;
   padding: 0.65rem 0.75rem;
   width: 100%;
+}
+
+select {
+  width: auto;
 }
 
 input:hover, textarea:hover {

@@ -9,6 +9,10 @@ export type APIArticlesResponse = {
     articles: EncyclopediaArticle[]
 }
 
+export type APICategoriesResponse = {
+    categories: Category[]
+}
+
 export type EncyclopediaArticle = {
     id: string
     title: string
@@ -19,6 +23,11 @@ export type EncyclopediaArticle = {
     author: EncyclopediaAuthor
     metadata: EncyclopediaMetadata
     toc: EncyclopediaTOCPoint[]
+}
+
+export type Category = {
+    slug: string
+    name: string
 }
 
 export type EncyclopediaTOCPoint = {
@@ -41,11 +50,17 @@ export type AddEncyclopediaArticleRequest = {
     id: string
     title: string
     body: string
+    category: string
     metadata: EncyclopediaMetadata
 }
 
 export type ChangeEncyclopediaArticleRequest = {
     body: string
+}
+
+export type ArticleCategoriesResponse = {
+    categories: Category[] | undefined
+    error: Err | undefined
 }
 
 export type ArticlesResponse = {

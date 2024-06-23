@@ -1,6 +1,38 @@
-import {APIArticlesResponse, ArticleResponse, ArticlesResponse, AutResponse} from "@/lib/asatruEncyclopediaAPI/models";
+import {
+    APIArticlesResponse, APICategoriesResponse,
+    ArticleCategoriesResponse,
+    ArticleResponse,
+    ArticlesResponse,
+    AutResponse
+} from "@/lib/asatruEncyclopediaAPI/models";
 import {encyclopediaApiUrl} from "@/lib/asatruEncyclopediaAPI/config";
 import {getInternalErr, getUnauthorisedErr, getUnknownErr} from "@/lib/asatruEncyclopediaAPI/errors";
+
+export async function fetchEncyclopediaArticleCategories(): Promise<ArticleCategoriesResponse> {
+    let resp: Response;
+    try {
+        resp = await fetch(`${encyclopediaApiUrl()}/category/all`, {
+            method: 'GET',
+            cache: "no-cache",
+        });
+    } catch (e) {
+        return {error: getInternalErr("Ошибка, попробуйте снова", (e as Error).message), categories: undefined}
+    }
+
+    if (!resp.ok) {
+        switch (resp.status) {
+            case 422 || 400 || 500: {
+                return {error: getInternalErr("Ошибка, попробуйте снова", await resp.json()), categories: undefined};
+            }
+            default: {
+                return {error: getUnknownErr("Неизвестная ошибка", await resp.json()), categories: undefined};
+            }
+        }
+    }
+
+    const catResp = await resp.json() as APICategoriesResponse
+    return {error: undefined, categories: catResp.categories};
+}
 
 export async function fetchEncyclopediaArticleByID(id: string): Promise<ArticleResponse> {
     let resp: Response;
