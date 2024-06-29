@@ -17,12 +17,26 @@ export async function generateMetadata(
 }
 
 export default async function Home() {
-    const {articles, error} = await fetchEncyclopediaArticles();
+    let {articles, error} = await fetchEncyclopediaArticles();
     let {categories} = await fetchEncyclopediaArticleCategories();
     categories?.push({name: "Все статьи", slug: "all"});
     if (!categories) {
         categories = [];
     }
+
+    articles = articles.sort((a, b) => {
+        if (a && b) {
+            const titleA = a.title.toLowerCase()
+            const titleB = b.title.toLowerCase()
+
+            if (titleA > titleB) {
+                return 1
+            }
+
+            return -1
+        }
+        return 0
+    })
 
     return (
         <main className={"main"}>

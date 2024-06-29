@@ -33,13 +33,39 @@ export default function Search() {
         if (query) {
             queryEncyclopediaArticles(query).then(res => {
                 if (res.articles) {
-                    setArticles(res.articles);
+                    const articles = res.articles.sort((a, b) => {
+                        if (a && b) {
+                            const titleA = a.title.toLowerCase()
+                            const titleB = b.title.toLowerCase()
+
+                            if (titleA > titleB) {
+                                return 1
+                            }
+
+                            return -1
+                        }
+                        return 0
+                    })
+                    setArticles(articles);
                 }
             })
         } else {
             fetchEncyclopediaArticles().then(res => {
                 if (res.articles) {
-                    setArticles(res.articles);
+                    const articles = res.articles.sort((a, b) => {
+                        if (a && b) {
+                            const titleA = a.title.toLowerCase()
+                            const titleB = b.title.toLowerCase()
+
+                            if (titleA > titleB) {
+                                return 1
+                            }
+
+                            return -1
+                        }
+                        return 0
+                    })
+                    setArticles(articles);
                 }
             })
         }

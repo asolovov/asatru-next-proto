@@ -22,9 +22,23 @@ export default async function Admin() {
     const getArticlesResp = await fetchEncyclopediaArticles();
     const getCategoriesResp = await fetchEncyclopediaArticleCategories();
 
+    const articles = getArticlesResp.articles.sort((a, b) => {
+        if (a && b) {
+            const titleA = a.title.toLowerCase()
+            const titleB = b.title.toLowerCase()
+
+            if (titleA > titleB) {
+                return 1
+            }
+
+            return -1
+        }
+        return 0
+    })
+
     return (
         <main className={"main"}>
-            {getArticlesResp.articles && <ArticlesListAdmin articles={getArticlesResp.articles}/>}
+            {getArticlesResp.articles && <ArticlesListAdmin articles={articles}/>}
             {getCategoriesResp.categories && <AddArticle aut={aut.value} categories={getCategoriesResp.categories}/>}
         </main>
     )

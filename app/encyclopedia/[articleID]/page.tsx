@@ -33,6 +33,14 @@ export default async function ViewArticle({params}:{params: {articleID: string}}
         console.log(`err get article with id ${params.articleID}:`, error.debug);
     }
 
+    if (article?.toc !== undefined && article.toc.length > 0) {
+         article.toc.splice(0, 0,{
+             name: `${article.title}: общие сведения`,
+             id: ""
+         })
+        article.title = `${article.title}: общие сведения`
+    }
+
     return (
         <main className={"main"}>
             {article &&
